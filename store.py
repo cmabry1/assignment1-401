@@ -1,8 +1,5 @@
 from abc import ABC, abstractmethod
 
-
-# -------------------- Product Base Class --------------------
-
 class Product(ABC):
     def __init__(self, pid, name, price, stock):
         self._id = pid
@@ -28,19 +25,10 @@ class Product(ABC):
     @abstractmethod
     def get_details(self):
         pass
-
-
-# -------------------- Indoor / Outdoor --------------------
-
 class IndoorProduct(Product):
     pass
-
-
 class OutdoorProduct(Product):
     pass
-
-
-# -------------------- Specific Products --------------------
 
 class Volleyball(IndoorProduct):
     def __init__(self, pid, name, price, stock, material, size):
@@ -70,9 +58,6 @@ class SoccerBall(OutdoorProduct):
     def get_details(self):
         return f"{self._name} | Material: {self.material} | Price: ${self._price}"
 
-
-# -------------------- Inventory --------------------
-
 class Inventory:
     def __init__(self):
         self.products = []
@@ -89,9 +74,6 @@ class Inventory:
             if p.get_name() == name:
                 return p
         return None
-
-
-# -------------------- Cart --------------------
 
 class Cart:
     def __init__(self):
@@ -113,19 +95,14 @@ class Cart:
             total *= 0.9
 
         return total
-
-
-# -------------------- Main Program --------------------
-
+        
 def main():
-    store = Inventory()
-
-    # Create products
+    store = Inventory
+    
     v1 = Volleyball(1, "Pro Volleyball", 25.0, 10, "Leather", "Official")
     t1 = Tent(2, "Camping Tent", 120.0, 5, "4-Person", "Rain Resistant")
     s1 = SoccerBall(3, "Soccer Ball", 30.0, 20, "Synthetic")
 
-    # Add to inventory
     store.add_product(v1)
     store.add_product(t1)
     store.add_product(s1)
@@ -142,7 +119,6 @@ def main():
         cart.add_to_cart(found, 2)
 
     print("\nTotal: $", cart.calculate_total(players=6))
-
 
 if __name__ == "__main__":
     main()
