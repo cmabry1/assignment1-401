@@ -17,17 +17,9 @@ public:
 
     virtual void getDetails() = 0;
 
-    void updateStock(int qty) {
-        stock += qty;
-    }
-
-    bool isAvailable(int qty) {
-        return stock >= qty;
-    }
-
-    void reduceStock(int qty) {
-        stock -= qty;
-    }
+    void updateStock(int qty) { stock += qty; }
+    bool isAvailable(int qty) { return stock >= qty; }
+    void reduceStock(int qty) { stock -= qty; }
 
     double getPrice() { return price; }
     string getName() { return name; }
