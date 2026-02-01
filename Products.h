@@ -1,16 +1,16 @@
 #ifndef PRODUCTS_H
 #define PRODUCTS_H
 
-#include "InProduct.h"
-#include "OutProduct.h"
+#include "IndoorProduct.h"
+#include "OutdoorProduct.h"
 
 // Volleyball
-class Volleyball : public InProduct {
+class Volleyball : public IndoorProduct {
     string material, size;
 public:
     Volleyball(int i, string n, double p, int s,
                string m, string sz)
-        : InProduct(i, n, p, s), material(m), size(sz) {}
+        : IndoorProduct(i, n, p, s), material(m), size(sz) {}
 
     void getDetails() override {
         cout << name << " | Material: " << material
@@ -20,12 +20,12 @@ public:
 };
 
 // Tent
-class Tent : public OutProduct {
+class Tent : public OutdoorProduct {
     string size, weather;
 public:
     Tent(int i, string n, double p, int s,
          string sz, string w)
-        : OutProduct(i, n, p, s), size(sz), weather(w) {}
+        : OutdoorProduct(i, n, p, s), size(sz), weather(w) {}
 
     void getDetails() override {
         cout << name << " | Size: " << size
@@ -35,12 +35,12 @@ public:
 };
 
 // Soccer Ball
-class SoccerBall : public OutProduct {
+class SoccerBall : public OutdoorProduct {
     string material;
 public:
     SoccerBall(int i, string n, double p, int s,
                string m)
-        : OutProduct(i, n, p, s), material(m) {}
+        : OutdoorProduct(i, n, p, s), material(m) {}
 
     void getDetails() override {
         cout << name << " | Material: " << material
