@@ -4,7 +4,6 @@
 #include "IndoorProduct.h"
 #include "OutdoorProduct.h"
 
-// Volleyball
 class Volleyball : public IndoorProduct {
     string material, size;
 public:
@@ -19,7 +18,6 @@ public:
     }
 };
 
-// Tent
 class Tent : public OutdoorProduct {
     string size, weather;
 public:
@@ -34,7 +32,6 @@ public:
     }
 };
 
-// Soccer Ball
 class SoccerBall : public OutdoorProduct {
     string material;
 public:
