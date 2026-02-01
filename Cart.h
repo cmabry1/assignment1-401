@@ -24,9 +24,8 @@ public:
             total += p->getPrice();
         }
 
-        // Soccer team discount
         if (players >= 5) {
-            total *= 0.9;  // 10% discount
+            total *= 0.9;
             cout << "Team discount applied!\n";
         }
 
